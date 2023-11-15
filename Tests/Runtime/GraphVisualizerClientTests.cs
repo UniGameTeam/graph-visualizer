@@ -21,6 +21,7 @@ class GraphVisualizerClientTest
     [Test]
     public void CanShowGraph()
     {
+#if UNITY_EDITOR
         var graph1 = CreatePlayableGraph("test1");
         var graph2 = CreatePlayableGraph("test2");
 
@@ -39,11 +40,13 @@ class GraphVisualizerClientTest
 
         graph1.Destroy();
         graph2.Destroy();
+#endif
     }
 
     [Test]
     public void CannotShowSameGraphTwice()
     {
+        
         var graph1 = CreatePlayableGraph("test1");
 
         GraphVisualizerClient.Show(graph1);
@@ -57,6 +60,7 @@ class GraphVisualizerClientTest
     [Test]
     public void CanHideGraph()
     {
+#if UNITY_EDITOR
         var graph1 = CreatePlayableGraph("test1");
         var graph2 = CreatePlayableGraph("test2");
 
@@ -76,6 +80,7 @@ class GraphVisualizerClientTest
 
         graph1.Destroy();
         graph2.Destroy();
+#endif
     }
 
     [Test]
